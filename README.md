@@ -1,4 +1,4 @@
-# agent SARSA
+# Implementacja agenta SARSA - Mikołaj Borkowski
 
 Repozytorium zawiera autorską implementację agenta SARSA przeznaczoną do wykorzystania w ramach biblioteki [reinforced-lib](https://reinforced-lib.readthedocs.io/en/latest/index.html).  
 
