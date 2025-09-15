@@ -5,21 +5,20 @@ import jax.numpy as jnp
 
 from reinforced_lib.exts import BaseExt, observation, parameter
 
-# 64 kubełki: 40 bardzo drobnych w [0,0.10] + 24 szersze wyżej
+# 64 bins: 40 bardzo drobnych w [0,0.10] + 24 szersze wyżej
 _EDGES = jnp.concatenate([
     jnp.linspace(0.00, 0.10, 41),  # 41 krawędzi => 40 kubełków
     jnp.array([0.12,0.14,0.16,0.18,0.20,0.23,0.26,
                0.30,0.35,0.40,0.45,0.50,0.55,0.60,
                0.65,0.70,0.75,0.80,0.85,0.90,0.93,
                0.96,0.98,1.00])
-])  # razem 65 krawędzi => 64 kubełki
+])  # razem 65 krawędzi => 64 bins
 
 def discretize_state(history: jnp.ndarray) -> int:
     if history.size == 0:
         return 0
     r = jnp.mean(history[:10])
     r = jnp.clip(r, 0.0, 1.0)
-    # indeks kubełka: right-1
     idx = jnp.searchsorted(_EDGES, r, side='right') - 1
     return jnp.clip(idx, 0, 63).astype(jnp.int32)
 
@@ -87,7 +86,7 @@ class IEEE_802_11_CCOD(BaseExt):
 
     @observation(observation_type=gym.spaces.Discrete(64))
     def current_state(self, history: list, *args, **kwargs) -> int:
-        valid_history = jnp.array(history[:self.history_length])  # Uwzględnij tylko aktualne dane
+        valid_history = jnp.array(history[:self.history_length])
         return discretize_state(valid_history)
 
     @parameter(parameter_type=gym.spaces.Box(-jnp.inf, jnp.inf, (1,), float))
