@@ -1,0 +1,2 @@
+# Reinforced_lib_agent_SARSA_implementation-praca_magisterska_Miko-aj_Borkowski
+Reporyzytorium z autorską implementacją agenta SARSA do wykorzystania w ramach biblioteki reinforced lib
