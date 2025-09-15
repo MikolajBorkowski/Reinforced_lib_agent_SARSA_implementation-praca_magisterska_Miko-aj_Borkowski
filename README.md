@@ -1,4 +1,4 @@
-# Reinforced_lib_agent_SARSA_implementation-praca_magisterska_Mikołaj_Borkowski
+# agent SARSA
 
 Repozytorium zawiera autorską implementację agenta SARSA przeznaczoną do wykorzystania w ramach biblioteki [reinforced-lib](https://reinforced-lib.readthedocs.io/en/latest/index.html).  
 
