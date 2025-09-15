@@ -11,7 +11,7 @@ W repozytorium znajdują się następujące pliki:
 ## Wymagania
 Do uruchomienia projektu potrzebne są:
 - Python **3.9+**  
-- [ns-3](https://www.nsnam.org/) (przetestowane na wersji zgodnej z reinforced-lib)  
+- ns-3 (przetestowane na wersji zgodnej z reinforced-lib)  
 - [reinforced-lib](https://reinforced-lib.readthedocs.io/en/latest/index.html)  
 
 ## Sposób uruchomienia
